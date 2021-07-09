@@ -21,21 +21,21 @@ function Collapsable() {
       Age: 27,
     },
   ]);
-  const onAddClicked = () => {
-    (firstName, lastName, Age == "") ? alert("Please enter the field") :
-      setList([
-        ...list,
-        {
-          firstName,
-          lastName,
-          Age
-        }
-      ])
+  const addItems = () => {
+    setList([
+      ...list,
+      {
+        firstName,
+        lastName,
+        Age
+      }
+    ])
     setFirstName("")
     setLastName("")
     setAge("")
+
   }
-  const onRemoveClicked = (removeIndx) => {
+  const removeItem = (removeIndx) => {
     setList(list.filter((_, index) => index !== removeIndx));
   };
 
@@ -49,8 +49,9 @@ function Collapsable() {
             onChange={(e) => setFirstName(e.currentTarget.value)} />
           <input className="text-edt" type="text" placeholder="Enter last name" value={lastName}
             onChange={(e) => setLastName(e.currentTarget.value)} />
-          <input className="text-edt" type="text" placeholder="Enter your age" />
-          <button id="btn" className="btn-submit" onClick={onAddClicked}>Add</button>
+          <input className="text-edt" type="text" placeholder="Enter your age" value={Age}
+            onChange={(e) => setAge(e.currentTarget.value)} />
+          <button id="btn" className="btn-submit" onClick={addItems}>Add</button>
         </div>
         <div className="table-content">
           <table className="table-data">
@@ -67,7 +68,7 @@ function Collapsable() {
                   <td>{person.lastName}</td>
                   <td>{person.Age}</td>
                   <td>
-                    <button id="btn" className="btn-remove" onClick={() => onRemoveClicked(personindex)}>
+                    <button id="btn" className="btn-remove" onClick={() => removeItem(personindex)}>
                       X
                     </button>
                   </td>
