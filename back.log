@@ -1,0 +1,141 @@
+import Collapsible from "./Component/Collapsible";
+import "./App.css";
+import React, { useState } from "react";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Collapsible />
+//     </div>
+//   );
+// }
+
+function Collapse(props) {
+  const [show, setShow] = useState(true);
+
+  const onToggleClicked = () => {
+    setShow(!show);
+  };
+
+  return (
+    <div>
+      {show && <div style={{ background: "#f10000" }}>{props.children}</div>}
+      <button onClick={onToggleClicked}>
+        {show ? props.hideText : props.showText}
+      </button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <Collapse hideText="Hide" showText="Show">
+        <p>This is first content</p>
+        <p>This is first content</p>
+        <p>This is first content</p>
+        <p>This is first content</p>
+        <p>This is first content</p>
+        <p>This is first content</p>
+      </Collapse>
+
+      <Collapse hideText="សេសដឹ" showText="សដរថបេ្ហថបហ្">
+        <p>This is second content</p>
+      </Collapse>
+    </div>
+  );
+}
+
+// class App extends React.Component {
+//   state = {
+//     show: true,
+//   };
+
+//   onToggleClicked = () => {
+//     this.setState({ show: !this.state.show });
+//   };
+
+//   render() {
+//     return (
+//       <div>
+//         {this.state.show && <div>Hello World</div>}
+//         <button onClick={this.onToggleClicked}>Toggle</button>
+//       </div>
+//     );
+//   }
+// }
+
+export default App;
+
+//...........................................................................
+
+import "./App.css";
+import React, { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [list, setList] = useState([
+    {
+      name: "Visal",
+      age: 100,
+    },
+    {
+      name: "Riya",
+      age: 2,
+    },
+  ]);
+
+  const onAddClicked = () => {
+    setList([
+      ...list,
+      {
+        name,
+        age,
+      },
+    ]);
+
+    setName("");
+    setAge("");
+  };
+
+  const onRemoveClicked = (removedIdx) => {
+    setList(list.filter((_, index) => index !== removedIdx));
+  };
+
+  return (
+    <div>
+      <div>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.currentTarget.value)}
+        />
+        <input
+          type="text"
+          value={age}
+          onChange={(e) => setAge(e.currentTarget.value)}
+        />
+        <button onClick={onAddClicked}>Add</button>
+      </div>
+
+      <table>
+        <tbody>
+          {list.map((person, personIdx) => (
+            <tr key={person.name}>
+              <td>{person.name}</td>
+              <td>{person.age}</td>
+              <td>
+                <button onClick={() => onRemoveClicked(personIdx)}>
+                  Remove
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default App;

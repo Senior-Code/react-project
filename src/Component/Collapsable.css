@@ -1,0 +1,117 @@
+.collapse-content {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 20px;
+}
+.btn-collapse {
+  margin-left: 5px;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 650;
+  color: #1877f2;
+  text-align: center;
+  width: 20%;
+  height: 35px;
+  border: none;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px 20px 20px 20px;
+  background-color: #f0f2f5;
+}
+#btn:hover {
+  background-color: #e6e6e6;
+}
+.content-hide {
+  margin-top: 20px;
+  height: 0px;
+  overflow: hidden;
+  transition: height ease 0.3s;
+}
+.content-show {
+  margin-top: 20px;
+  height: 800px;
+  transition: height ease 0.3s;
+}
+
+.text-input {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.text-edt {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  flex-grow: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 12px;
+  padding-left: 10px;
+  padding: 10px;
+  font-weight: 700;
+  background-color: #f0f2f5;
+  outline: none;
+  border: none;
+  width: 30px;
+  color: black;
+  border-radius: 20px 20px 20px 20px;
+  border: 0.2px solid #eceef1;
+}
+.btn-submit {
+  margin-left: 10px;
+  text-align: center;
+  font-size: 15px;
+  width: 15%;
+  padding: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 650;
+  color: #1877f2;
+  text-align: center;
+  height: 33px;
+  border: none;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px 20px 20px 20px;
+  background-color: #f0f2f5;
+}
+.table-content {
+  border-radius: 20px 20px 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.table-data {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+td {
+  padding: 15px;
+}
+th {
+  color: #ffffff;
+  padding: 10px;
+  background-color: rgb(179, 146, 255);
+}
+td {
+  background-color: rgb(169, 255, 226);
+}
+.btn-remove {
+  margin-left: 10px;
+  text-align: center;
+  font-size: 15px;
+  width: 30px;
+  padding: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 650;
+  color: #ff0000;
+  text-align: center;
+  height: 30px;
+  border: none;
+  border-radius: 20px 20px 20px 20px;
+  background-color: #ffffff;
+}
