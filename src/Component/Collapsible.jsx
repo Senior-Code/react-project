@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Collapsable.css'
+import { IoIosArrowDown } from 'react-icons/io'
 
 function Collapsable() {
   const [visible, setVisible] = useState(false);
@@ -45,6 +46,20 @@ function Collapsable() {
     setList(list.filter((_, index) => index !== removeIndx));
   };
 
+  const [dropdown, setDropdown] = useState(false)
+  const onDropdownClicked = () => {
+    setDropdown(!dropdown)
+  }
+
+  const [dropdownlistItem] = useState([
+    "C++", "PHP", "Javascript", "TypeScript", "Java"
+  ])
+  function DropdownlistItem() {
+    return (
+      <div>{dropdownlistItem.map((x) => (<div id="btn" className="dropdown-item" key={x}>{x}</div>))}
+      </div >
+    );
+  }
 
   return (
     <div className="collapse-content" >
@@ -83,6 +98,13 @@ function Collapsable() {
             </tbody>
           </table>
         </div>
+      </div>
+      <div className="dropdown-section">
+        <button id="btn" className="btn-dropdown" onClick={onDropdownClicked}>
+          <IoIosArrowDown />
+        </button>
+
+        {dropdown && <DropdownlistItem></DropdownlistItem>}
       </div>
     </div>
   );
