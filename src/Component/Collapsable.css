@@ -35,7 +35,7 @@
 }
 .content-show {
   margin-top: 20px;
-  height: 800px;
+  height: 500px;
   transition: height ease 0.3s;
 }
 
@@ -83,6 +83,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .table-data {
   width: 100%;

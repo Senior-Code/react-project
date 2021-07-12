@@ -20,16 +20,22 @@ function Collapsable() {
       lastName: "Chan",
       Age: 27,
     },
+    {
+      firstName: "John",
+      lastName: "Dose",
+      Age: 30
+    }
   ]);
   const addItems = () => {
-    setList([
-      ...list,
-      {
-        firstName,
-        lastName,
-        Age
-      }
-    ])
+    (firstName === "" || lastName === "" || Age === "") ? alert("Please enter the empty field") :
+      setList([
+        ...list,
+        {
+          firstName,
+          lastName,
+          Age
+        }
+      ])
     setFirstName("")
     setLastName("")
     setAge("")
