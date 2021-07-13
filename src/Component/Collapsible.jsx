@@ -56,7 +56,7 @@ function Collapsable() {
   ])
   function DropdownlistItem() {
     return (
-      <div>{dropdownlistItem.map((x) => (<div id="btn" className="dropdown-item" key={x}>{x}</div>))}
+      <div className="dropdown-parent">{dropdownlistItem.map((x) => <div id="btn" className="dropdown-item" key={x}>{x}</div>)}
       </div >
     );
   }
@@ -103,7 +103,6 @@ function Collapsable() {
         <button id="btn" className="btn-dropdown" onClick={onDropdownClicked}>
           <IoIosArrowDown />
         </button>
-
         {dropdown && <DropdownlistItem></DropdownlistItem>}
       </div>
     </div>
